@@ -1,0 +1,22 @@
+<h1>Create Marking Page</h1>
+
+<%= form_for @marking_page do |f| %>
+
+	<% topic_num = 1 %>
+	<%= f.fields_for :topics do |t| %>
+		<%= t.label(:name, "Topic #{topic_num}") %>
+		<%= t.text_field(:name) %>
+		<br>
+		<% topic_num += 1 %>
+	<% end %>
+	<% topic_num = 1 %>
+	<%= f.fields_for :bubble_statements do |t| %>
+		<%= t.label(:text, "Bubble Statement #{topic_num}") %>
+		<%= t.text_field(:text) %>
+		<br>
+		<% topic_num += 1 %>
+	<% end %>	
+	<%= f.submit %>
+<% end %>
+
+
