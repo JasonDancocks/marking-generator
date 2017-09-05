@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904191652) do
+ActiveRecord::Schema.define(version: 20170905194523) do
 
-  create_table "bubble_statements", force: :cascade do |t|
-    t.string "text"
-    t.integer "topic_id"
+  create_table "i_statements", force: :cascade do |t|
+    t.text "statement"
+    t.integer "p_statement_id"
+    t.integer "marking_page_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["topic_id"], name: "index_bubble_statements_on_topic_id"
+    t.index ["marking_page_id"], name: "index_i_statements_on_marking_page_id"
+    t.index ["p_statement_id"], name: "index_i_statements_on_p_statement_id"
   end
 
   create_table "marking_pages", force: :cascade do |t|
@@ -25,12 +27,14 @@ ActiveRecord::Schema.define(version: 20170904191652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "topics", force: :cascade do |t|
-    t.string "name"
+  create_table "p_statements", force: :cascade do |t|
     t.integer "marking_page_id"
+    t.string "branch"
+    t.text "statement"
+    t.text "i_statement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["marking_page_id"], name: "index_topics_on_marking_page_id"
+    t.index ["marking_page_id"], name: "index_p_statements_on_marking_page_id"
   end
 
 end

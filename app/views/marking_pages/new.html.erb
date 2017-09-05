@@ -2,20 +2,17 @@
 
 <%= form_for @marking_page do |f| %>
 
-	<% topic_num = 1 %>
-	<%= f.fields_for :topics do |t| %>
-		<%= t.label(:name, "Topic #{topic_num}") %>
-		<%= t.text_field(:name) %>
+	<% p_num = 1 %>
+	<%= f.fields_for :p_statements do |p| %>
+		<%= p.select(:branch, options_for_select(%i[algebra data shape number])) %>
 		<br>
-		<% topic_num += 1 %>
+		<%= p.label(:statement, "P #{p_num}") %>
+		<%= p.text_field(:statement) %>
+		<%= p.label(:i_statement, "I #{p_num}") %>
+		<%= p.text_field(:i_statement) %>
+		<br>
+		<% p_num += 1 %>
 	<% end %>
-	<% topic_num = 1 %>
-	<%= f.fields_for :bubble_statements do |t| %>
-		<%= t.label(:text, "Bubble Statement #{topic_num}") %>
-		<%= t.text_field(:text) %>
-		<br>
-		<% topic_num += 1 %>
-	<% end %>	
 	<%= f.submit %>
 <% end %>
 

@@ -1,0 +1,2 @@
+class CombinedStatement < ApplicationRecord
+end

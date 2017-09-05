@@ -1,9 +1,11 @@
 class MarkingPagesController < ApplicationController
 	def new
 		@marking_page = MarkingPage.new
-		3.times do
-			@marking_page.topics.build
+		3.times do 
+			@marking_page.p_statements.build
 		end
+			
+		
 	end
 
 
@@ -25,6 +27,6 @@ class MarkingPagesController < ApplicationController
 	private
 
 	def marking_page_params
-		params.permit(:marking_page).require(topic_attributes: %i[id name], bubble_statement_attributes: %i[id text])
+		params.require(:marking_page).permit(p_statements_attributes: [:id, :branch,    :statement, :i_statement])
 	end
 end

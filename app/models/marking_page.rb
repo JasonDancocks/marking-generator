@@ -1,6 +1,5 @@
 class MarkingPage < ApplicationRecord
-	has_many :topics
-	has_many :bubble_statements, through: :topics
+	has_many :p_statements
 
-	accepts_nested_attributes_for :topics
+	accepts_nested_attributes_for :p_statements
 end
