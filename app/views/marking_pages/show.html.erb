@@ -1,2 +1,27 @@
-<h1>MarkingPage#show</h1>
-<p>Find me in app/views/marking_page/show.html.erb</p>
+<div id="worksheet">
+	<div id="praise"> 
+		<p> P </p>
+		<ol>
+			<% @marking_page.p_statements.each do |p| %>
+			<li><%=p.statement %></li>
+			<% end %>
+		</ol>
+		<div id="proud">
+		<p>P R O U D </p>
+		</div>
+	</div>
+
+	<div id ="improvement">
+		<p> I </p>
+		<ol>
+			<% @marking_page.p_statements.each do |p| %>
+			<li> <%= p.i_statement %></li>
+			<% end %>
+		</ol>
+	</div>
+</div>
+
+
+
+
+

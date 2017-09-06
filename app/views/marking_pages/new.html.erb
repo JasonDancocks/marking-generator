@@ -6,6 +6,8 @@
 	<%= f.fields_for :p_statements do |p| %>
 		<%= p.select(:branch, options_for_select(%i[algebra data shape number])) %>
 		<br>
+		<%= p.collection_select(:statement, PStatement.all, :statement, :statement) %>
+		<br>
 		<%= p.label(:statement, "P #{p_num}") %>
 		<%= p.text_field(:statement) %>
 		<%= p.label(:i_statement, "I #{p_num}") %>
