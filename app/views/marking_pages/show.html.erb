@@ -1,27 +1,38 @@
-<div id="worksheet">
-	<div id="praise"> 
-		<p> P </p>
-		<ol>
-			<% @marking_page.p_statements.each do |p| %>
-			<li><%=p.statement %></li>
-			<% end %>
+<div class="container-fluid" >
+<% 3.times do %>
+	<div class="row border">
+		<div class="col-4 border"> 
+			<div class="row">
+				<div class="col-2">
+					<span class="border"> P </span>
+				</div>
+				<div class ="col-10">
+					<span class="border">P R O U D </span>
+				</div>
+			</div>
+		
+	<ol>
+	<% @marking_page.p_statements.each do |p| %>
+		<li><%=p.statement %></li>
+		<% end %>
 		</ol>
-		<div id="proud">
-		<p>P R O U D </p>
+		
 		</div>
-	</div>
-
-	<div id ="improvement">
-		<p> I </p>
+		
+		<div class="col-8 border">
+		<span class="border"> I </span>
 		<ol>
-			<% @marking_page.p_statements.each do |p| %>
+		<% @marking_page.p_statements.each do |p| %>
 			<li> <%= p.i_statement %></li>
 			<% end %>
-		</ol>
-	</div>
-</div>
-
-
-
-
-
+			</ol>
+			</div>
+			</div>
+			<div class="row">
+			</div>
+			<% end %>
+			</div>
+			
+			
+			
+			
