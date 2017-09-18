@@ -12,7 +12,6 @@ class MarkingPagesController < ApplicationController
 	def create
 		@marking_page = MarkingPage.new(marking_page_params)
 		if @marking_page.save
-			flash[:success] = "Marking page created"
 			redirect_to @marking_page
 		else
 			flash[:warning] = "Something went wrong"
