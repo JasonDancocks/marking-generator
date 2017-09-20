@@ -1,4 +1,9 @@
-<h1>Create Marking Page</h1>
+<div class="container-fluid">
+<div class ="jumbotron">
+<div class="text-center">
+<h1 class="text-primary">Create Marking Page</h1>
+
+
 
 <% if @marking_page.errors.any? %>
   <div id="error_explanation">
@@ -11,6 +16,8 @@
     </ul>
   </div>
 <% end %>
+
+<div class="container">
 <%= form_for @marking_page do |f| %>
 
 	<% p_num = 1 %>
@@ -20,19 +27,42 @@
 		<%= p.collection_select(:statement, PStatement.all, :statement, :statement) %>
 		<br>
 		-->
-		<%= p.label(:statement, "P #{p_num}") %>
-		<%= p.text_field(:statement) %>
-		<%= p.label(:i_statement, "I #{p_num}") %>
-		<%= p.text_area(:i_statement) %>
-		<br>
+		
+		<div class="form-row align-items-center">
+		<div class="col">
+		<%= p.label(:statement, "P Statement #{p_num}", class: "col-form-label") %>
+		<%= p.text_field(:statement, class: "form-control ") %>
+		</div>
+
+		
+	
+
+		<div class="col">
+		<%= p.label(:i_statement, "I Statement #{p_num}", class: "col-form-label") %>
+		<%= p.text_area(:i_statement, class: "form-control ",rows: 1) %>
+		
+		</div>
+		</div>
+		
 		<% p_num += 1 %>
 	<% end %>
-	<%= f.label(:count, "Sheets required") %>
+<br>
+	<div class="form-group">
+	<%= f.label(:count, "Sheets required",class: "form-label") %>
 	<%= f.text_field(:count, size: "5") %>
-	<%= f.label(:extension, "Add Extension statement?")%>
+
+	
+	<%= f.label(:extension, "Add Extension statement?", class: "form-check-label")%>
 	<%= f.check_box(:extension)%>
-	<%= f.submit %>
+
+</div>
+
+	<%= f.submit html: {class: "btn btn-primary"} %>
 	
 <% end %>
+</div>
+</div>
+</div>
+</div>
 
 
