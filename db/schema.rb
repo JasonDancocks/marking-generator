@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20170920155350) do
   create_table "marking_pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "count"
     t.boolean "extension"
   end
 
