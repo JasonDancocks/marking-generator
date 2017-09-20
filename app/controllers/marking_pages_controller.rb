@@ -26,6 +26,6 @@ class MarkingPagesController < ApplicationController
 	private
 
 	def marking_page_params
-		params.require(:marking_page).permit(:count, p_statements_attributes: [:id, :branch,    :statement, :i_statement])
+		params.require(:marking_page).permit(:count, :extension, p_statements_attributes: [:id, :branch,    :statement, :i_statement])
 	end
 end

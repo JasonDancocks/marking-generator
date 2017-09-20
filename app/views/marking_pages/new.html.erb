@@ -29,7 +29,10 @@
 	<% end %>
 	<%= f.label(:count, "Sheets required") %>
 	<%= f.text_field(:count, size: "5") %>
+	<%= f.label(:extension, "Add Extension statement?")%>
+	<%= f.check_box(:extension)%>
 	<%= f.submit %>
+	
 <% end %>
 
 

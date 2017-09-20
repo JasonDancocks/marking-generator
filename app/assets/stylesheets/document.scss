@@ -1,26 +1,31 @@
-
 @media print {
     html, body {
       width: 210mm;
       height: 297mm;
-      
     }
     .row{
         page-break-inside: avoid;
         font-size: 16pt; 
         font-family: "Comic Sans MS", cursive, sans-serif;
     }
-    
+    span {
+        font-size: 20pt;
+      
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
 }
 
 body {
     font-size: 16px;
+    
+}
+span {
+    font-size: 20pt;
+  
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.border {
-    border-width: 5px;
-    border-color: black;
-}
+
 
 .row {
     margin: 5px;
@@ -29,6 +34,14 @@ body {
 
 .worksheet {
     min-height: 30%;
+}
+
+.p-box {
+    padding: 0px 7.47px 0px 7.47px ;
+}
+
+.i-box {
+    padding: 0px 11.57px 0px 11.57px ;
 }
 
   

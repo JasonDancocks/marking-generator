@@ -1,13 +1,13 @@
 <div class="container-fluid" >
 <% @marking_page.count.times do %>
 	<div class="row border worksheet">
-		<div class="col-4 border"> 
+		<div class="col-4 border border-dark"> 
 			<div class="row">
 				<div class="col-2">
-					<span class="border"> P </span>
+					<span class="p-box border border-dark rounded"> P </span>
 				</div>
-				<div class ="col-10">
-					<span class="border">P R O U D </span>
+				<div class ="text-center col-10">
+				
 				</div>
 			</div>
 		
@@ -18,20 +18,35 @@
 		</ol>
 		
 		</div>
+		<div class="col-8 border border-dark">
+		<div class="row">
+				<div class="col-2">
+					<span class="i-box border border-dark rounded "> I </span>
+				</div>
+				<div class ="text-center col-10">
+					<span class=" border rounded border-dark px-3">P R O U D </span>
+				</div>
 		
-		<div class="col-8 border">
-		<span class="border"> I </span>
+		</div>
+		
+		
+		
 		<ol>
 		<% @marking_page.p_statements.each do |p| %>
 			<li> <%= p.i_statement %></li>
 			<% end %>
+			<% if extension? %>
+			<li> Extension Task </li>
+			<% end %> 
 			</ol>
+			
 			</div>
 			</div>
 			<div class="row">
 			</div>
 			<% end %>
 			</div>
+
 			
 			
 			
