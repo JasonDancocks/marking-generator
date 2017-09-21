@@ -1,12 +1,16 @@
-
 <%= render partial: "page", locals: {page: @marking_page}%>
 
 			<%= form_tag  marking_page_print_path(marking_page_id: get_id) do |f|%>
+
 				<%= label_tag(:count, "Sheets required",class: "form-label") %>
 				<%= text_field_tag(:count) %>
+
+				<%= label_tag(:extension, "Add Extension statement?", class: "form-check-label")%>
+				<%= check_box_tag(:extension)%>
+
 				<%= submit_tag("Print")%>
-				
-			<% end%>
+
+<% end%>
 
 			
 			

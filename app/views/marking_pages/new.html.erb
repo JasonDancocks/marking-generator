@@ -1,63 +1,32 @@
-
-<h1 class="text-primary">Create Marking Page</h1>
-
-
-
-<% if @marking_page.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@marking_page.errors.count, "error") %> prohibited this marking_page from being saved:</h2>
- 
-    <ul>
-    <% @marking_page.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<h1 class="text-primary">
+	Create Marking Page</h1>
 
 <div class="container">
-<%= form_for @marking_page do |f| %>
-
-	<% p_num = 1 %>
-	<%= f.fields_for :p_statements do |p| %>
-		<!-- <%= p.select(:branch, options_for_select(%i[algebra data shape number])) %>
+	<%= form_for @marking_page do |f| %>
+		<% p_num = 1 %>
+			<%= f.fields_for :p_statements do |p| %>
+				<!-- <%= p.select(:branch, options_for_select(%i[algebra data shape number])) %>
 		<br>
 		<%= p.collection_select(:statement, PStatement.all, :statement, :statement) %>
 		<br>
 		-->
-		
-		<div class="form-row align-items-center">
-		<div class="col">
-		<%= p.label(:statement, "P Statement #{p_num}", class: "col-form-label") %>
-		<%= p.text_field(:statement, class: "form-control ") %>
-		</div>
+				<div class="form-row align-items-center">
+					<div class="col">
+						<%= p.label(:statement, "P Statement #{p_num}", class: "col-form-label") %>
+							<%= p.text_field(:statement, class: "form-control ") %>
+					</div>
 
-		
-	
+					<div class="col">
+						<%= p.label(:i_statement, "I Statement #{p_num}", class: "col-form-label") %>
+							<%= p.text_area(:i_statement, class: "form-control ",rows: 1) %>
 
-		<div class="col">
-		<%= p.label(:i_statement, "I Statement #{p_num}", class: "col-form-label") %>
-		<%= p.text_area(:i_statement, class: "form-control ",rows: 1) %>
-		
-		</div>
-		</div>
-		
-		<% p_num += 1 %>
+					</div>
+				</div>
+
+				<% p_num += 1 %>
+			<% end %>
+			<br>
+			<%= f.submit html: {class: "btn btn-primary"} %>
+
 	<% end %>
-<br>
-	<div class="form-group">
-
-
-	
-	<%= f.label(:extension, "Add Extension statement?", class: "form-check-label")%>
-	<%= f.check_box(:extension)%>
-
 </div>
-
-	<%= f.submit html: {class: "btn btn-primary"} %>
-	
-<% end %>
-</div>
-
-
-

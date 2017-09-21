@@ -1,13 +1,11 @@
 module MarkingPagesHelper
  def extension? 
     
-   # @marking_page = MarkingPage.find(get_id)
-    
-    #if @marking_page.extension
+   if params[:extension].present? && params[:extension] == "1"
         return true
-    #else
-       # return false
-    #end
+    else
+       return false
+    end
  end
 
  def get_id

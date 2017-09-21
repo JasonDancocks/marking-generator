@@ -1,0 +1,10 @@
+<% if @marking_page.errors.any? %>
+    <div id="error_explanation">
+   	    <h2><%= pluralize(@marking_page.errors.count, "error") %> prohibited this marking_page from being saved:</h2>
+    	<ul>
+            <% @marking_page.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

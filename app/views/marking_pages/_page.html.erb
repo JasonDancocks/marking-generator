@@ -1,47 +1,48 @@
 <div class="bg-white">
-	<div class="row border worksheet">
-		<div class="col-4 border border-dark"> 
-			<div class="row">
-				<div class="col-2">
-					<span class="p-box border border-dark rounded"> P </span>
-				</div>
-				<div class ="text-center col-10">
-				
-				</div>
-			</div>
-		
-	<ol>
-	<% page.p_statements.each do |p| %>
-		<li><%=p.statement %></li>
-		<% end %>
-		</ol>
-		
-		</div>
-		<div class="col-8 border border-dark">
-		<div class="row">
-				<div class="col-2">
-					<span class="i-box border border-dark rounded "> I </span>
-				</div>
-				<div class ="text-center col-10">
-					<span class=" border rounded border-dark px-3">P R O U D </span>
-				</div>
-		
-		</div>
-		
-		
-		
-		<ol>
-		<%page.p_statements.each do |p| %>
-			<li> <%= p.i_statement %></li>
-			<% end %>
-			<% if extension? %>
-			<li> Extension Task </li>
-			<% end %> 
-			</ol>
-			
-			</div>
-			</div>
-			<div class="row">
-			</div>
-			</div>
-			
+    <div class="row border worksheet">
+        <div class="col-4 border border-dark">
+            <div class="row">
+                <div class="col-2">
+                    <span class="p-box border border-dark rounded"> P </span>
+                </div>
+                <div class="text-center col-10">
+
+                </div>
+            </div>
+
+            <ol>
+                <% page.p_statements.each do |p| %>
+                    <li>
+                        <%=p.statement %>
+                    </li>
+                <% end %>
+            </ol>
+
+        </div>
+        <div class="col-8 border border-dark">
+            <div class="row">
+                <div class="col-2">
+                    <span class="i-box border border-dark rounded "> I </span>
+                </div>
+                <div class="text-center col-10">
+                    <span class=" border rounded border-dark px-3">P R O U D </span>
+                </div>
+
+            </div>
+
+            <ol>
+                <%page.p_statements.each do |p| %>
+                    <li>
+                        <%= p.i_statement %>
+                    </li>
+                <% end %>
+                <% if extension? %>
+                    <li> Extension Task </li>
+                <% end %>
+            </ol>
+
+        </div>
+    </div>
+    <div class="row">
+    </div>
+</div>
