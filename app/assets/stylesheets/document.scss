@@ -34,7 +34,11 @@ span {
 .worksheet {
     min-height: 30%;
 }
-.worksheet:hover {
+.hover-effect {
+    background: transparent;
+    padding-top: 2px;
+}
+.hover-effect:hover {
     background: #5bc0de;
     
 }
@@ -45,5 +49,9 @@ span {
 
 .i-box {
     padding: 0px 11.57px 0px 11.57px;
+}
+
+a {
+    text-decoration: none !important;
 }
 

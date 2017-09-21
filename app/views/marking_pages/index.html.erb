@@ -1,4 +1,8 @@
 <h1 class="text-info"> Page Bank </h1>
 <% @marking_pages.each do |page|%>
+    <div class="hover-effect">
+   
      <%= link_to render(partial: 'page', locals: { page: page}), page %>
+     </div>
+     <br>
 <% end %>
