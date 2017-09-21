@@ -1,1 +1,4 @@
-<%= render partial: "page", collection: @marking_pages, as: :page%>
+<h1 class="text-info"> Page Bank </h1>
+<% @marking_pages.each do |page|%>
+     <%= link_to render(partial: 'page', locals: { page: page}), page %>
+<% end %>
