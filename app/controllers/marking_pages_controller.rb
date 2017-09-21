@@ -34,6 +34,12 @@ class MarkingPagesController < ApplicationController
 		render layout: "print"
 	end
 
+	def destroy
+		@marking_page = MarkingPage.find(helpers.get_id)
+		@marking_page.destroy
+		redirect_to root_path
+	end
+
 	private
 
 	def marking_page_params

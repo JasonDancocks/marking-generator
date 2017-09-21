@@ -11,7 +11,11 @@
 
 				<%= submit_tag("Print")%>
 
-<% end%>
+			<% end%>
+			
+			<%= link_to 'delete', marking_page_path(@marking_page),
+            data: {:confirm => "You can't undo this! Are you sure?"}, :method => :delete %>
+			
 
 			
 			
