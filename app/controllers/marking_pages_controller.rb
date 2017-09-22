@@ -31,8 +31,17 @@ class MarkingPagesController < ApplicationController
 
 	def print
 		@marking_page = MarkingPage.find(params[:marking_page_id])
-		render layout: "print"
 	end
+
+	def edit_as_new
+		@existing_page = MarkingPage.find(params[:marking_page_id])
+		@marking_page = MarkingPage.new
+		
+		@existing_page.p_statements.each do |p|
+			@marking_page.p_statements.build(statement: p.statement, i_statement: p.i_statement)
+		end
+		render "new"
+	  end
 
 	def destroy
 		@marking_page = MarkingPage.find(helpers.get_id)

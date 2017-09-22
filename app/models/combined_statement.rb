@@ -1,2 +1,0 @@
-class CombinedStatement < ApplicationRecord
-end

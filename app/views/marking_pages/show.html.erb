@@ -1,4 +1,6 @@
-<h1 class="text-info"> Marking Page </h1>
+<div class="text-center">
+<h2 class="text-info"> Marking Page </h2>
+<div class="mx-auto print-preview">
 <%= render partial: "page", locals: {page: @marking_page}%>
 
 			<%= form_tag  marking_page_print_path(marking_page_id: get_id) do |f|%>
@@ -13,10 +15,11 @@
 
 			<% end%>
 			
-			<%= link_to 'delete', marking_page_path(@marking_page),
+			<%= button_to "Modify", marking_page_edit_as_new_path(marking_page_id: get_id)%>
+			<%= link_to 'Delete', marking_page_path(@marking_page),
             data: {:confirm => "You can't undo this! Are you sure?"}, :method => :delete %>
-			
-
+		</div>	
+</div>
 			
 			
 			
