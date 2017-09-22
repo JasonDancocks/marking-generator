@@ -26,7 +26,7 @@ class MarkingPagesController < ApplicationController
 	end
 
 	def index
-		@marking_pages = MarkingPage.all
+		@marking_pages = MarkingPage.bank_feed
 	end
 
 	def print
