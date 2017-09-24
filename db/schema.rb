@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905194523) do
+ActiveRecord::Schema.define(version: 20170905180030) do
 
-  create_table "i_statements", force: :cascade do |t|
-    t.text "statement"
-    t.integer "p_statement_id"
-    t.integer "marking_page_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["marking_page_id"], name: "index_i_statements_on_marking_page_id"
-    t.index ["p_statement_id"], name: "index_i_statements_on_p_statement_id"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "marking_pages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -28,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170905194523) do
   end
 
   create_table "p_statements", force: :cascade do |t|
-    t.integer "marking_page_id"
+    t.bigint "marking_page_id"
     t.string "branch"
     t.text "statement"
     t.text "i_statement"
